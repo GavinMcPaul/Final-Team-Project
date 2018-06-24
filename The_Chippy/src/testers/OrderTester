@@ -1,0 +1,32 @@
+package Testers;
+// Connor McCabe
+// Order Item Tester Class
+// 10/03/18
+import Classes.Order_Item;
+import java.util.*;
+
+public class OrderTester {
+	public static void main(String [] args)
+	{
+		//Declare an ArrayList to hold orders
+		ArrayList<Order_Item>addItem = new ArrayList<Order_Item>();
+		
+		//Declare an order object
+		Order_Item item = new Order_Item();
+		
+		//Create a new Order object with values
+		Order_Item currentItem = new Order_Item(34,1,1.20);
+		currentItem.getOrderItems(1);
+		
+		//Test Adding items to order and printing
+		Vector orderIterator1 = item.getOrderItems(1);
+		System.out.println("Fetching and printing items...");
+		System.out.println();
+		Iterator<Order_Item>orderIterator2 = orderIterator1.iterator();
+		while(orderIterator2.hasNext())
+		{
+			Order_Item displayItem = orderIterator2.next();
+			System.out.println(displayItem.getProductCode()+"\t"+/*+displayItem.getQuantity()+*/"\t"+displayItem.getTotalPrice());
+	}
+}
+}
